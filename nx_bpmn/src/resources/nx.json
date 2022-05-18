@@ -1,0 +1,83 @@
+{
+    "name": "NavaxShapes",
+    "prefix": "nx",
+    "types": [
+        {
+            "name": "Status",
+            "superClass": [ "Element" ],
+            "properties": [
+                {
+                    "name": "Code",
+                    "isAttr": true,
+                    "type": "String"
+                },
+                {
+                    "name": "Editable",
+                    "isAttr": true,
+                    "type": "Boolean"
+                },
+                {
+                    "name": "Modification Method Code",
+                    "isAttr": true,
+                    "type": "String"
+                },
+                {
+                    "name": "No Interaction WF Continue",
+                    "isAttr": true,
+                    "type": "Boolean"
+                },
+                {
+                    "name": "Field1",
+                    "isAttr": true,
+                    "type": "String"
+                },
+                {
+                    "name": "Field2",
+                    "isAttr": true,
+                    "type": "String"
+                },
+                {
+                    "name": "Field3",
+                    "isAttr": true,
+                    "type": "String"
+                },
+                {
+                    "name": "Field4",
+                    "isAttr": true,
+                    "type": "String"
+                },
+                {
+                    "name": "Status1",
+                    "isAttr": true,
+                    "type": "String"
+                },
+                {
+                    "name": "Status2",
+                    "isAttr": true,
+                    "type": "String"
+                },
+                {
+                    "name": "Status3",
+                    "isAttr": true,
+                    "type": "String"
+                },
+                {
+                    "name": "Status4",
+                    "isAttr": true,
+                    "type": "String"
+                },
+                {
+                    "name": "PostAtFinalization",
+                    "isAttr": true,
+                    "type": "Boolean"
+                },
+                {
+                    "name": "Function",
+                    "isAttr": true,
+                    "type": "String"
+                }
+            ]
+        }
+    ],
+    "enumerations": []
+}
