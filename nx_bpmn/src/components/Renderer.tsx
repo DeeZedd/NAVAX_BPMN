@@ -64,7 +64,7 @@ const Renderer = () => {
             <div id="canvas">
                 
             </div>
-            <button onClick={LoadModel}>Load</button>;
+            <button onClick={LoadModel}>Load</button>
         </>
     );
 }
