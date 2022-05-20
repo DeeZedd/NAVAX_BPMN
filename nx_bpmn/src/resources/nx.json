@@ -77,6 +77,242 @@
                     "type": "String"
                 }
             ]
+        },
+        {
+            "name": "Activity",
+            "superClass": [ "Element" ],
+            "properties": [
+                {
+                    "name": "Code",
+                    "isAttr": true,
+                    "type": "String"
+                },
+                {
+                    "name": "Editable",
+                    "isAttr": true,
+                    "type": "Boolean"
+                },
+                {
+                    "name": "No Interaction WF Continue",
+                    "isAttr": true,
+                    "type": "Boolean"
+                },
+                {
+                    "name": "InternalNote",
+                    "isAttr": true,
+                    "type": "String"
+                }
+            ]
+        },
+        {
+            "name": "Decision",
+            "superClass": [ "Element" ],
+            "properties": [
+                {
+                    "name": "Code",
+                    "isAttr": true,
+                    "type": "String"
+                },
+                {
+                    "name": "Editable",
+                    "isAttr": true,
+                    "type": "Boolean"
+                },
+                {
+                    "name": "No Interaction WF Continue",
+                    "isAttr": true,
+                    "type": "Boolean"
+                },
+                {
+                    "name": "InternalNote",
+                    "isAttr": true,
+                    "type": "String"
+                }
+            ]
+        },
+        {
+            "name": "Start",
+            "extends": [ "bpmn:StartEvent" ],
+            "properties": []
+        },
+        {
+            "name": "Check",
+            "superClass": [ "Element" ],
+            "properties": [
+                {
+                    "name": "Code",
+                    "isAttr": true,
+                    "type": "String"
+                },
+                {
+                    "name": "PartnerNote",
+                    "isAttr": true,
+                    "type": "String"
+                },
+                {
+                    "name": "InternalNote",
+                    "isAttr": true,
+                    "type": "String"
+                }
+            ]
+        },
+        {
+            "name": "Connector",
+            "extends": [ "bpmn:SequenceFlow" ],
+            "properties": []
+        },
+        {
+            "name": "Discarded",
+            "superClass": [ "Element" ],
+            "properties": [
+                {
+                    "name": "Code",
+                    "isAttr": true,
+                    "type": "String"
+                },
+                {
+                    "name": "Editable",
+                    "isAttr": true,
+                    "type": "Boolean"
+                },
+                {
+                    "name": "No Interaction WF Continue",
+                    "isAttr": true,
+                    "type": "Boolean"
+                },
+                {
+                    "name": "Modification Method Code",
+                    "isAttr": true,
+                    "type": "String"
+                },
+                {
+                    "name": "PostAtFinalization",
+                    "isAttr": true,
+                    "type": "Boolean"
+                },
+                {
+                    "name": "Status1",
+                    "isAttr": true,
+                    "type": "String"
+                },
+                {
+                    "name": "Status2",
+                    "isAttr": true,
+                    "type": "String"
+                },
+                {
+                    "name": "Status3",
+                    "isAttr": true,
+                    "type": "String"
+                },
+                {
+                    "name": "Status4",
+                    "isAttr": true,
+                    "type": "String"
+                }
+            ]
+        },
+        {
+            "name": "Declined",
+            "superClass": [ "Element" ],
+            "properties": [
+                {
+                    "name": "Code",
+                    "isAttr": true,
+                    "type": "String"
+                },
+                {
+                    "name": "Editable",
+                    "isAttr": true,
+                    "type": "Boolean"
+                },
+                {
+                    "name": "No Interaction WF Continue",
+                    "isAttr": true,
+                    "type": "Boolean"
+                },
+                {
+                    "name": "Modification Method Code",
+                    "isAttr": true,
+                    "type": "String"
+                },
+                {
+                    "name": "PostAtFinalization",
+                    "isAttr": true,
+                    "type": "Boolean"
+                },
+                {
+                    "name": "Status1",
+                    "isAttr": true,
+                    "type": "String"
+                },
+                {
+                    "name": "Status2",
+                    "isAttr": true,
+                    "type": "String"
+                },
+                {
+                    "name": "Status3",
+                    "isAttr": true,
+                    "type": "String"
+                },
+                {
+                    "name": "Status4",
+                    "isAttr": true,
+                    "type": "String"
+                }
+            ]
+        },
+        {
+            "name": "Closed",
+            "superClass": [ "Element" ],
+            "properties": [
+                {
+                    "name": "Code",
+                    "isAttr": true,
+                    "type": "String"
+                },
+                {
+                    "name": "Editable",
+                    "isAttr": true,
+                    "type": "Boolean"
+                },
+                {
+                    "name": "No Interaction WF Continue",
+                    "isAttr": true,
+                    "type": "Boolean"
+                },
+                {
+                    "name": "Modification Method Code",
+                    "isAttr": true,
+                    "type": "String"
+                },
+                {
+                    "name": "PostAtFinalization",
+                    "isAttr": true,
+                    "type": "Boolean"
+                },
+                {
+                    "name": "Status1",
+                    "isAttr": true,
+                    "type": "String"
+                },
+                {
+                    "name": "Status2",
+                    "isAttr": true,
+                    "type": "String"
+                },
+                {
+                    "name": "Status3",
+                    "isAttr": true,
+                    "type": "String"
+                },
+                {
+                    "name": "Status4",
+                    "isAttr": true,
+                    "type": "String"
+                }
+            ]
         }
     ],
     "enumerations": []
