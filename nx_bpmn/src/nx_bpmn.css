@@ -1,0 +1,30 @@
+.bpmn-app {
+    display: flex;
+    flex: auto;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: stretch;
+    height: 800px;
+}
+
+#bpmn-content {
+    flex-grow: 2;
+    order: 0;
+    align-items: stretch;
+    z-index: 0;
+    height: 100%;
+    margin: 1px;
+    border: solid;
+    border-width: 1px;
+}
+
+#bpmn-properties {
+    order: 1;
+    z-index: 1;
+    height: 100%;
+    width: 300px;
+    margin: 1px;
+    border: solid;
+    border-width: 1px;
+}
