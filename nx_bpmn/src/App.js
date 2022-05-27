@@ -7,6 +7,9 @@ import nxExtension from './resources/nx.json';
 import nxPalette from './nxPalette';
 import CustomContextPadProvider from './overrides/overrideContextPad';
 import CustomPaletteProvider from './overrides/overridePalette';
+import nxRenderer from './nxRenderer';
+import nxRulesModule from './nxRulesModule';
+import NxModeler from './nx-modeler';
 
 function App() {
 
@@ -36,14 +39,30 @@ function App() {
         paletteProvider: [ 'type', CustomPaletteProvider ]
       };
     
-      var viewer = new BpmnModeler({
+      // var viewer = new BpmnModeler({
+      //   container: '#bpmn-content',
+      //   propertiesPanel: {
+      //     parent: '#bpmn-properties'
+      //   },
+      //   additionalModules: [
+      //     // overrideModule,
+      //     nxPalette,
+      //     nxRenderer,
+      //     // nxRulesModule,
+      //     BpmnPropertiesPanelModule,
+      //     BpmnPropertiesProviderModule
+      //   ],
+      //   moddleExtensions: {
+      //     nx: nxExtension
+      //   }
+      // });
+
+      var viewer = new NxModeler({
         container: '#bpmn-content',
         propertiesPanel: {
           parent: '#bpmn-properties'
         },
         additionalModules: [
-          // overrideModule,
-          nxPalette,
           BpmnPropertiesPanelModule,
           BpmnPropertiesProviderModule
         ],
@@ -53,7 +72,7 @@ function App() {
       });
 
       viewer.importXML(bpmnXML, function(err) {
-      viewer.get('bpmn-content').zoom('fit-viewport');
+      // viewer.get('bpmn-content').zoom('fit-viewport');
 
         if (err) {
           console.log('error rendering', err);

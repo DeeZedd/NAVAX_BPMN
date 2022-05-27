@@ -1,5 +1,6 @@
 export default class nxPalette {
-    constructor (create, elementFactory, palette, translate) {
+    constructor (bpmnFactory, create, elementFactory, palette, translate) {
+        this.bpmnFactory = bpmnFactory;
         this.create = create;
         this.elementFactory = elementFactory;
         this.translate = translate;
@@ -11,12 +12,15 @@ export default class nxPalette {
         console.log('getEntries: ', element);
         
         const {
+            bpmnFactory,
             create,
             elementFactory,
             translate
         } = this;
 
         function createStatus(event) {
+            // const businessObject = bpmnFactory.create('nx:Status');
+            // const shape = elementFactory.createShape({type: 'nx:Status', businessObject: businessObject});
             const shape = elementFactory.createShape({type: 'nx:Status'});
 
             create.start(event, shape);
@@ -159,6 +163,7 @@ export default class nxPalette {
 }
 
 nxPalette.$inject = [
+    'bpmnFactory',
     'create',
     'elementFactory',
     'palette',

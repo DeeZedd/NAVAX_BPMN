@@ -21,7 +21,7 @@ export default class nxContextPad {
         function appendStatus(event, element) {
             if (autoPlace) {
                 const shape = elementFactory.createShape({ type: 'nx:Status' });
-
+                console.log('appendStatus', element, shape);
                 autoPlace.append(element, shape);
             } else {
                 appendStatusStart(event, element);
