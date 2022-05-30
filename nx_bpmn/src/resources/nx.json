@@ -4,77 +4,96 @@
     "types": [
         {
             "name": "Status",
-            "superClass": [ "Element" ],
+            "superClass": [ "bpmn:BaseElement" ],
             "properties": [
                 {
                     "name": "Code",
                     "isAttr": true,
-                    "type": "String"
+                    "type": "String",
+                    "default": ""
                 },
                 {
                     "name": "Editable",
                     "isAttr": true,
-                    "type": "Boolean"
+                    "type": "Boolean",
+                    "default": true
                 },
                 {
                     "name": "Modification Method Code",
                     "isAttr": true,
-                    "type": "String"
+                    "type": "String",
+                    "default": ""
                 },
                 {
                     "name": "No Interaction WF Continue",
                     "isAttr": true,
-                    "type": "Boolean"
+                    "type": "Boolean",
+                    "default": true
                 },
                 {
                     "name": "Field1",
                     "isAttr": true,
-                    "type": "String"
+                    "type": "String",
+                    "default": ""
                 },
                 {
                     "name": "Field2",
                     "isAttr": true,
-                    "type": "String"
+                    "type": "String",
+                    "default": ""
                 },
                 {
                     "name": "Field3",
                     "isAttr": true,
-                    "type": "String"
+                    "type": "String",
+                    "default": ""
                 },
                 {
                     "name": "Field4",
                     "isAttr": true,
-                    "type": "String"
+                    "type": "String",
+                    "default": ""
                 },
                 {
                     "name": "Status1",
                     "isAttr": true,
-                    "type": "String"
+                    "type": "String",
+                    "default": ""
                 },
                 {
                     "name": "Status2",
                     "isAttr": true,
-                    "type": "String"
+                    "type": "String",
+                    "default": ""
                 },
                 {
                     "name": "Status3",
                     "isAttr": true,
-                    "type": "String"
+                    "type": "String",
+                    "default": ""
                 },
                 {
                     "name": "Status4",
                     "isAttr": true,
-                    "type": "String"
+                    "type": "String",
+                    "default": ""
                 },
                 {
                     "name": "PostAtFinalization",
                     "isAttr": true,
-                    "type": "Boolean"
+                    "type": "Boolean",
+                    "default": false
                 },
                 {
                     "name": "Function",
                     "isAttr": true,
-                    "type": "String"
+                    "type": "String",
+                    "default": ""
+                },
+                {
+                    "name": "documentation",
+                    "type": "Documentation",
+                    "isMany": true
                 }
             ]
         },

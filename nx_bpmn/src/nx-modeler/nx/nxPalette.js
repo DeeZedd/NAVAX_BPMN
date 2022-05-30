@@ -98,9 +98,9 @@ import {
         group: 'tools',
         separator: true
       },
-      // 'create.start-event': createAction(
-      //   'bpmn:StartEvent', 'event', 'bpmn-icon-start-event-none'
-      // ),
+      'create.start-event': createAction(
+        'bpmn:StartEvent', 'event', 'bpmn-icon-start-event-none'
+      ),
       // 'create.end-event': createAction(
       //   'bpmn:EndEvent', 'event', 'bpmn-icon-end-event-none'
       // ),
