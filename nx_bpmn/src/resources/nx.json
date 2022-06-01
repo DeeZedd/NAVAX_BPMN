@@ -1,6 +1,8 @@
 {
     "name": "NavaxShapes",
+    "uri": "http://www.navax.com",
     "prefix": "nx",
+    "associations": [],
     "types": [
         {
             "name": "Status",
@@ -9,8 +11,7 @@
                 {
                     "name": "Code",
                     "isAttr": true,
-                    "type": "String",
-                    "default": ""
+                    "type": "String"
                 },
                 {
                     "name": "Editable",
@@ -89,11 +90,6 @@
                     "isAttr": true,
                     "type": "String",
                     "default": ""
-                },
-                {
-                    "name": "documentation",
-                    "type": "Documentation",
-                    "isMany": true
                 }
             ]
         },
@@ -334,5 +330,9 @@
             ]
         }
     ],
-    "enumerations": []
+    "enumerations": [],
+    "xml": {
+        "tagAlias": "lowerCase",
+        "typePrefix": "t"
+    }
 }

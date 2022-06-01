@@ -3,6 +3,16 @@ import { useService } from 'bpmn-js-properties-panel';
 import { is } from 'bpmn-js/lib/util/ModelUtil';
 
 export default function(element) {
+  return [
+    {
+      id: 'Code',
+      component: CodeProperty,
+      isEdited: isTextFieldEntryEdited
+    }
+  ];
+
+
+
     if (is(element, 'nx:Status')) {
         return [
             CreateCodeAttribute(element)
@@ -10,6 +20,8 @@ export default function(element) {
             // CreateTextAttribute('Modification Method Code')
         ];
     }
+
+    return [];
 }
 
 function CreateCodeAttribute(element)
@@ -30,8 +42,12 @@ function CodeProperty(props) {
   const translate = useService('translate');
   const debounce = useService('debounceInput');
 
+  console.log('id', id);
+  console.log('modeling', modeling);
+  console.log('element', element);
+
   const getValue = () => {
-    return element.businessObject.code || '';
+    return element.businessObject.Code || 'empty';
   }
 
   const setValue = value => {

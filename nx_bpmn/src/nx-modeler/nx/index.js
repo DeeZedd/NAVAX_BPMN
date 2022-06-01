@@ -5,7 +5,6 @@ import nxPalette from './nxPalette';
 import nxRenderer from './nxRenderer';
 import nxRules from './nxRules';
 import nxUpdater from './nxUpdater';
-import nxPropertiesProvider from './nxPropertyProvider';
 
 export default {
     __init__: [
@@ -14,8 +13,7 @@ export default {
         'customRenderer',
         'customRules',
         'customUpdater',
-        'paletteProvider',
-        'customPropertiesProvider'
+        'paletteProvider'
     ],
     contextPadProvider: [ 'type', nxContextPadProvider ],
     customOrderingProvider: [ 'type', nxOrderingProvider ],
@@ -24,5 +22,4 @@ export default {
     customUpdater: [ 'type', nxUpdater ],
     elementFactory: [ 'type', nxElementFactory ],
     paletteProvider: [ 'type', nxPalette ],
-    customPropertiesProvider: [ 'type', nxPropertiesProvider ]
 };

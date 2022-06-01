@@ -2,6 +2,7 @@ import './App.css';
 import './nx_bpmn.css';
 import { useEffect, useState } from 'react';
 import { BpmnPropertiesPanelModule, BpmnPropertiesProviderModule } from 'bpmn-js-properties-panel';
+import nxPropertiesProviderModule from './nx-properties';
 import nxExtension from './resources/nx.json';
 import NxModeler from './nx-modeler';
 
@@ -35,7 +36,8 @@ function App() {
         },
         additionalModules: [
           BpmnPropertiesPanelModule,
-          BpmnPropertiesProviderModule
+          BpmnPropertiesProviderModule,
+          nxPropertiesProviderModule
         ],
         moddleExtensions: {
           nx: nxExtension

@@ -38,13 +38,12 @@ export default function nxPropertiesProvider(propertiesPanel, translate) {
      */
     return function(groups) {
 
+      console.log(groups);
+      // Add the "magic" group
+      if(isNavax(element)) {
+        groups.push(createNavaxGroup(element, translate));
         console.log(groups);
-        // Add the "magic" group
-        if(isNavax(element)) {
-            groups.push(createNavaxGroup(element, translate));
-            console.log(groups);
       }
-
       return groups;
     }
   };
