@@ -1,5 +1,6 @@
 import './App.css';
 import './nx_bpmn.css';
+// import 'bpmn-js-properties-panel/dist/assets/bpmn-js-properties-panel.css'
 import { useEffect, useState } from 'react';
 import { BpmnPropertiesPanelModule, BpmnPropertiesProviderModule } from 'bpmn-js-properties-panel';
 import nxPropertiesProviderModule from './nx-properties';

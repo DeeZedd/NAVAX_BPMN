@@ -6,9 +6,10 @@ import {
   /**
    * A palette that allows you to create BPMN _and_ custom elements.
    */
-  export default function nxPaletteProvider(palette, create, elementFactory, spaceTool, lassoTool) {
+  export default function nxPaletteProvider(palette, bpmnFactory, create, elementFactory, spaceTool, lassoTool) {
   
     this._create = create;
+    this._bpmnFactory = bpmnFactory;
     this._elementFactory = elementFactory;
     this._spaceTool = spaceTool;
     this._lassoTool = lassoTool;
@@ -18,6 +19,7 @@ import {
   
   nxPaletteProvider.$inject = [
     'palette',
+    'bpmnFactory',
     'create',
     'elementFactory',
     'spaceTool',
@@ -29,6 +31,7 @@ import {
   
     var actions  = {},
         create = this._create,
+        bpmnFactory = this._bpmnFactory,
         elementFactory = this._elementFactory,
         spaceTool = this._spaceTool,
         lassoTool = this._lassoTool;
@@ -37,8 +40,10 @@ import {
     function createAction(type, group, className, title, options) {
   
       function createListener(event) {
-        var shape = elementFactory.createShape(assign({ type: type }, options));
-  
+        var businessObject = bpmnFactory.create(type);
+        var shape = elementFactory.createShape(assign({ type: type, businessObject: businessObject }, options));
+        // var shape = elementFactory.createShape(assign({ type: type }, options));
+        
         if (options) {
           shape.businessObject.di.isExpanded = options.isExpanded;
         }
@@ -46,7 +51,7 @@ import {
         create.start(event, shape);
       }
   
-      var shortType = type.replace(/^bpmn:/, '');
+      var shortType = type.replace(/^nx:/, '');
   
       return {
         group: group,

@@ -1,5 +1,7 @@
 import {
-    assign
+    assign,
+    forEach,
+    bind
   } from 'min-dash';
   
   import inherits from 'inherits';
@@ -86,6 +88,17 @@ import {
             }
           });
         }
+
+        // forEach(attrs, bind(function(val, key) {
+        //   if (!(key in attrs.businessObject)) {
+        //     Object.defineProperty(attrs.businessObject, key, {
+        //       value: function(key2, value2) {
+        //         return this[key2] = value2;
+        //       }
+        //     });
+        //   }
+        // }, this));
+  
   
         // END minic ModdleElement API
   
@@ -103,7 +116,18 @@ import {
     'moddle'
   ];
   
-  
+function Base() { }
+
+Base.prototype.get = function(name) {
+  return this.$model.properties.get(this, name);
+};
+
+Base.prototype.set = function(name, value) {
+  this.$model.properties.set(this, name, value);
+};
+
+
+
   /**
    * Returns the default size of custom shapes.
    *
@@ -133,3 +157,47 @@ import {
   
     return shapes[type] || shapes.__default;
   };
+
+  nxElementFactory.prototype.createType = function(descriptor) {
+
+    var model = this.model;
+  
+    var props = this.properties,
+        prototype = Object.create(Base.prototype);
+  
+    // initialize default values
+    forEach(descriptor.properties, function(p) {
+      if (!p.isMany && p.default !== undefined) {
+        prototype[p.name] = p.default;
+      }
+    });
+  
+    props.defineModel(prototype, model);
+    props.defineDescriptor(prototype, descriptor);
+  
+    var name = descriptor.ns.name;
+  
+    /**
+     * The new type constructor
+     */
+    function ModdleElement(attrs) {
+      props.define(this, '$type', { value: name, enumerable: true });
+      props.define(this, '$attrs', { value: {} });
+      props.define(this, '$parent', { writable: true });
+  
+      forEach(attrs, bind(function(val, key) {
+        this.set(key, val);
+      }, this));
+    }
+  
+    ModdleElement.prototype = prototype;
+  
+    ModdleElement.hasType = prototype.$instanceOf = this.model.hasType;
+  
+    // static links
+    props.defineModel(ModdleElement, model);
+    props.defineDescriptor(ModdleElement, descriptor);
+  
+    return ModdleElement;
+  };
+  
